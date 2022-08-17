@@ -8,6 +8,7 @@ const routes = [
       { path: '/home', name: 'home', meta: { title: '首页' }, component: () => import('@/views/home/index.vue') },
       { path: '/scrollView', name: 'scrollView', meta: { title: 'ScrollView' }, component: () => import('@/views/scrollView/index.vue') },
       { path: '/autoFontSizeView', name: 'autoFontSizeView', meta: { title: 'AutoFontSizeView' }, component: () => import('@/views/autoFontSizeView/index.vue') },
+      { path: '/signatureCanvas', name: 'signatureCanvas', meta: { title: 'SignatureCanvas' }, component: () => import('@/views/signatureCanvas/index.vue') },
     ]
   },
 ]

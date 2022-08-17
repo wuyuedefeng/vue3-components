@@ -10,7 +10,10 @@ import { defineComponent, reactive, toRefs, onMounted, watch } from 'vue'
 export default defineComponent({
   name: 'VcAutoFontSizeView',
   props: {
-    content: String,
+    content: {
+      type: String,
+      required: true,
+    },
     maxWidth: {
       type: Number,
       default: 0
@@ -27,15 +30,16 @@ export default defineComponent({
       getFontSize(width: number, fontStyle: '', fontFamily = '') {
         const canvas = document.createElement('canvas')
         const context = canvas.getContext('2d')
-        const [minFontSize= 12, maxFontSize = 100] = props.allowFontSizeRange
-        let fontSize = maxFontSize
+        if (!context) { return }
+        const [minFontSize = 12, maxFontSize = 100] = props.allowFontSizeRange
+        let fontSize = maxFontSize as number;
         while (true) {
           context.font = `${fontStyle} ${fontSize}px ${fontFamily}`
           const measure = context.measureText(props.content)
           // https://developer.mozilla.org/en-US/docs/Web/API/TextMetrics#measuring_text_width
           // const measureWidth = measure.width
           const measureWidth = Math.max(measure.width, measure.actualBoundingBoxRight + measure.actualBoundingBoxLeft)
-          if (measureWidth > Math.max(width, props.maxWidth) && fontSize > minFontSize) {
+          if (measureWidth > Math.max(width, props.maxWidth) && fontSize > (minFontSize as number)) {
             fontSize--
           } else {
             break

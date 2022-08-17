@@ -5,6 +5,7 @@
         <li @click="$router.push({name: 'home'})">home</li>
         <li @click="$router.push({name: 'scrollView'})">scrollView</li>
         <li @click="$router.push({name: 'autoFontSizeView'})">autoFontSizeView</li>
+        <li @click="$router.push({name: 'signatureCanvas'})">signatureCanvas</li>
       </ul>
     </div>
     <div class="right-layout">
