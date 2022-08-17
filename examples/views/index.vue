@@ -1,5 +1,16 @@
 <template>
-  <router-view></router-view>
+  <div class="layout">
+    <div class="left-layout">
+      <ul>
+        <li @click="$router.push({name: 'home'})">home</li>
+        <li @click="$router.push({name: 'scrollView'})">scrollView</li>
+        <li @click="$router.push({name: 'autoFontSizeView'})">autoFontSizeView</li>
+      </ul>
+    </div>
+    <div class="right-layout">
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
 
 <script lang='tsx'>

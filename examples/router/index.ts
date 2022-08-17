@@ -7,6 +7,7 @@ const routes = [
     path: '/', redirect: '/home', component: () => import('@/views/index.vue'), children: [
       { path: '/home', name: 'home', meta: { title: '首页' }, component: () => import('@/views/home/index.vue') },
       { path: '/scrollView', name: 'scrollView', meta: { title: 'ScrollView' }, component: () => import('@/views/scrollView/index.vue') },
+      { path: '/autoFontSizeView', name: 'autoFontSizeView', meta: { title: 'AutoFontSizeView' }, component: () => import('@/views/autoFontSizeView/index.vue') },
     ]
   },
 ]
